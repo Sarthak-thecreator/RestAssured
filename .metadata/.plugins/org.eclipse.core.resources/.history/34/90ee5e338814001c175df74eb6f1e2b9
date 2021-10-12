@@ -1,0 +1,29 @@
+package com.ti.handson2;
+
+public class Question2
+{
+
+	public static void main(String[] args) 
+	{
+		Calculator c=new Calculator();
+		c.sum(5, 5);
+		c.sum(5.1, 5.3);
+		c.sum(5, 5.1);
+	}
+
+}
+class Calculator
+{
+	int sum(int x,int y)
+	{
+		System.out.println("Sum:"+(x+y));
+	}
+	double sum(double x,double y)
+	{
+		System.out.println("Sum:"+(x+y));
+	}
+	double sum(int x,double y)
+	{
+		System.out.println("Sum:"+(x+y));
+	}
+}

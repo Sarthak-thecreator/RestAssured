@@ -1,0 +1,63 @@
+package com.google;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Rediff {
+
+	public static void main(String[] args) 
+	{
+		WebDriver driver = null ;
+		public void readproperty() throws Exception {
+		FileInputStream fis = new FileInputStream("Resources\\config.properties");
+		Properties prop = new Properties();
+		prop.load(fis);
+		String browser = prop.getProperty("browser");
+		String URL = prop.getProperty("URL");
+		fis.close();
+		setup(browser,URL);
+		}
+		public void setup(String browser, String URL)
+		{
+		switch(browser){
+		case "firefox":
+		System.setProperty("webdriver.gecko.driver", "Resources\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		break;
+		case "chrome":
+		System.setProperty("webdriver.chrome.driver", "Resources\\chromedriver.exe");
+		driver = new ChromeDriver();
+		break;
+		case "Edge": System.setProperty("webdriver.edge.driver", "Resources\\msedgedriver.exe");
+		driver = new EdgeDriver();
+		break;
+		}
+		driver.get(URL);
+		}
+		
+		public void rediffmailLinkTest()
+		{
+			driver.findElement(By.Linktext("RediffMail")).click();
+			String navURL=driver.getCurrentUrl();
+			if(navURL.equals("https://mail.rediff.com/cgi-bin/login.cgi"))
+				System.out.println("PASS");
+			else
+				System.out.println("FAIL");
+		}
+		public void loginTest()
+		{
+			driver.findElement(By.id("login1")).sendKeys("Sarthak123");
+			driver.findElement(By.id("password")).sendKeys("XYZ");
+			driver.findElement(By.id("remember")).sendKeys(Keys.SPACE);
+		}
+
+	}
+
+}

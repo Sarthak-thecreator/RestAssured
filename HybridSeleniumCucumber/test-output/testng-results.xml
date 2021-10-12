@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="46975" started-at="2021-09-30T07:10:09Z" finished-at="2021-09-30T07:10:56Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="46975" started-at="2021-09-30T07:10:09Z" finished-at="2021-09-30T07:10:56Z">
+      <class name="com.testcases.LoginTestCase">
+        <test-method status="PASS" signature="stratUp()[pri:0, instance:com.testcases.LoginTestCase@7726e185]" name="stratUp" is-config="true" duration-ms="35073" started-at="2021-09-30T07:10:09Z" finished-at="2021-09-30T07:10:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stratUp -->
+        <test-method status="PASS" signature="login()[pri:0, instance:com.testcases.LoginTestCase@7726e185]" name="login" duration-ms="10061" started-at="2021-09-30T07:10:44Z" finished-at="2021-09-30T07:10:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.testcases.LoginTestCase@7726e185]" name="close" is-config="true" duration-ms="1216" started-at="2021-09-30T07:10:55Z" finished-at="2021-09-30T07:10:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.testcases.LoginTestCase -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

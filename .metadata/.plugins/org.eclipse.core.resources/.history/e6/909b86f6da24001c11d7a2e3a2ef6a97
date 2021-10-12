@@ -1,0 +1,15 @@
+package com.google;
+
+import org.junit.Assert;
+import org.junit.Assert.*;
+import org.junit.Test;
+public class JUnitTest 
+{
+	@Test
+	public void test1()
+	{
+		String str1="Hi";
+		Assert.assertEquals("Strings did not match","Hello", str1);
+		Assert.assertEquals("Strings did not match","Hi", str1);
+	}
+}

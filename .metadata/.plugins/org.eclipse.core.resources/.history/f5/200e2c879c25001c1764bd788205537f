@@ -1,0 +1,36 @@
+package codility;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class Solution extends WebDriverTestCase {
+
+	@Test
+	public void test1()
+	{
+		webDriver.get("https://jmeter.apache.org/");
+		System.out.println(webDriver.getTitle());
+		assertEquals("Apache JMeter - Apache JMeter",webDriver.getTitle());
+	}
+	@Test
+	public void test2()
+	{
+		List<WebElement> ls= webDriver.findElements(By.xpath("//div[@class='nav']/ul[3]/li/ul/li/a"));
+		int sz=ls.size();
+		System.out.println(sz);
+		assertTrue(sz==10);
+		for(int i=0;i<sz; i++)
+		{
+			String st=ls.get(i).getText();
+			System.out.println(st);
+		}
+			
+	}
+
+}
+]

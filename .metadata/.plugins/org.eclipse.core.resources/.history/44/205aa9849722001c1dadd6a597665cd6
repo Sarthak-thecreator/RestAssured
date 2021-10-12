@@ -1,0 +1,32 @@
+package com.google;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class GoogleSearchPage 
+{
+
+	public static void main(String[] args)
+	{
+		WebDriver driver=null;
+		String browser="Firefox";
+		switch(browser)
+		{
+		case "Firefox":
+			System.setProperty("webdriver.gecko.driver", "C:\\Users\\personal\\workspace\\LTITesting\\Resources\\geckodriver.exe");
+			driver=new FirefoxDriver();
+			break;
+
+		case"Chrome":
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\personal\\workspace\\LTITesting\\Resources\\chromedriver.exe");
+			driver=new ChromeDriver();	
+			break;
+		}
+		
+		
+		driver.get("https://www.google.com/");
+		System.out.println(driver.getTitle());
+		driver.close();
+	}
+
+}

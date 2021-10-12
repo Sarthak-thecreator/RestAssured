@@ -1,0 +1,71 @@
+package day8;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+public class KeyWords {
+	
+		WebDriver driver;
+		
+		public KeyWords(WebDriver driver) {
+		this.driver = driver;
+		}
+		
+		public void getUrl(String url) {
+			driver.get(url);
+			
+		}
+		 public void click(String locatorType, String locatorValue) {
+			 if(locatorType.equals("id"))
+				driver.findElement(By.id(locatorValue)).click();
+			 else if(locatorType.equals("name"))
+				 driver.findElement(By.name(locatorValue)).click();
+			 else if(locatorType.equals("css"))
+				 driver.findElement(By.cssSelector(locatorValue)).click();
+			 else if(locatorType.equals("link"))
+				 driver.findElement(By.linkText(locatorValue)).click();
+			 else if(locatorType.equals("xpath"))
+				 driver.findElement(By.xpath(locatorValue)).click();
+			 else 
+				 System.out.println("Invalid Locator");
+			 
+		}
+		public void type(String locatorType, String locatorValue,String data) {
+			
+			
+			 if(locatorType.equals("id"))
+					driver.findElement(By.id(locatorValue)).sendKeys(data);
+				 else if(locatorType.equals("name"))
+					 driver.findElement(By.name(locatorValue)).sendKeys(data);
+				 else if(locatorType.equals("css"))
+					 driver.findElement(By.cssSelector(locatorValue)).sendKeys(data);
+				 else if(locatorType.equals("link"))
+					 driver.findElement(By.linkText(locatorValue)).sendKeys(data);
+				 else if(locatorType.equals("xpath"))
+					 driver.findElement(By.xpath(locatorValue)).sendKeys(data);
+				 else 
+					 System.out.println("Invalid Locator");
+		}
+		
+		public void takeSnap(String filename) throws IOException
+		{
+			
+			TakesScreenshot screenshot = ((TakesScreenshot)driver);
+
+			File srcfile=screenshot.getScreenshotAs(OutputType.FILE);	
+			FileUtils.copyFile(srcfile,new File("ScreenShots\\"+filename));
+			//external lib needed
+			
+
+			
+			
+		}
+		
+		}
+

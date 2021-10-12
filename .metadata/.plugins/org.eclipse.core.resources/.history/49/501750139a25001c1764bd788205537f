@@ -1,0 +1,17 @@
+package codility;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Solution extends WebDriverTestCase {
+
+	@Test
+	public void test()
+	{
+		webDriver.get("https://jmeter.apache.org/");
+		System.out.println(webDriver.getTitle());
+		assertEquals("Apache JMeter - Apache JMeter",webDriver.getTitle());
+	}
+
+}

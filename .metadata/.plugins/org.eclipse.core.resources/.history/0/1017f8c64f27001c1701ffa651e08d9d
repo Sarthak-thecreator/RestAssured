@@ -1,0 +1,13 @@
+package StepDefinition;
+
+import org.openqa.selenium.WebDriver;
+
+public class SeleniumSteps 
+{
+	WebDriver driver;
+	@Given("User is on Home Page of Selenium")
+	public void user_is_on_home_page_of_selenium()
+	{
+		System.setProperty("webdriver.chrome.driver","src/test/")
+	}
+}

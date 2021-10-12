@@ -1,0 +1,14 @@
+package poiexample;
+
+import java.io.*;
+import java.util.Date;
+import org.apache.poi.ss.usermodel.*;
+public class DataCellExample {
+
+	public static void main(String[] args) 
+	{
+		
+
+	}
+
+}

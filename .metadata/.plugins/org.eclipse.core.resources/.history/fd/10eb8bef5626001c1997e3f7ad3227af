@@ -1,0 +1,12 @@
+package day7;
+
+import org.openqa.selenium.WebDriver;
+
+public class DashBoardPage 
+{
+	WebDriver driver;
+	DashBoardPage(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+}

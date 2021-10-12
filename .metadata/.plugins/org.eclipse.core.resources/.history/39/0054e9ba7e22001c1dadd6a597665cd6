@@ -1,0 +1,61 @@
+package frameworks;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class FrameHandling 
+{
+	public static void main(String[] args) 
+	{
+		FileInputStream fil=new FileInputStream(new File("E:\\test leaf\\Selenium\\Logindata.xlsx"));
+
+		XSSFWorkbook workbook=new XSSFWorkbook(fil);
+
+		XSSFSheet sheet=workbook.getSheet("data");
+
+		int count=sheet.getLastRowNum();
+
+		System.out.println(count);
+
+		for (inti = 1; i<=count; i++) {
+
+		XSSFRow row = sheet.getRow(i);
+
+		XSSFCell cell = row.getCell(0);
+
+		String un= cell.getStringCellValue();
+
+		XSSFCell cell1 = row.getCell(1);
+
+		String pwd = cell.getStringCellValue();
+
+		FirefoxDriver driver = new FirefoxDriver();
+
+		driver.manage().window().maximize();
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		driver.get("http://facebook.com");
+
+		driver.findElement(By.id("email")).sendKeys(un);
+
+		driver.findElement(By.id("pass")).sendKeys(pwd);
+
+		driver.findElement(By.id("u_0_w")).click();
+
+		driver.findElement(By.id("userNavigationLabel")).click();
+
+		driver.findElementByXPath(".//*[@id='u_f_1']/div/div/div[1]/div/div/ul/li[12]/a/span/span");
+
+		driver.close();
+
+		}
+
+		}
+
+		}
+		
+	}
+}

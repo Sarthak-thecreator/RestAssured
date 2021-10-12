@@ -1,0 +1,38 @@
+package com.google;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class GoogleSearchPage 
+{
+
+	public static void main(String[] args)throws Exception
+	{
+		WebDriver driver=null;
+		FileInputStream fis = new FileInputStream("Resources\\config.properties");
+		Properties prop = new Properties();
+		prop.load(fis);
+		String browser=prop.getProperty("browser");
+		String URI=prop.getProperty("BaseURL");
+		switch(browser)
+		{
+		case "firefox":
+			System.setProperty("webdriver.gecko.driver", "Resources\\geckodriver.exe");
+			driver=new FirefoxDriver();
+			break;
+
+		case"chrome":
+			System.setProperty("webdriver.chrome.driver", "Resources\\chromedriver.exe");
+			driver=new ChromeDriver();	
+			break;
+		}
+		
+		
+		driver.get("URI");
+		System.out.println(driver.getTitle());
+		driver.close();
+	}
+
+}

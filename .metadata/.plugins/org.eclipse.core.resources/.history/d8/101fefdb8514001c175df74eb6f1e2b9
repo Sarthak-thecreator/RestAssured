@@ -1,0 +1,16 @@
+package com.ti.handson2;
+
+public class Question1
+{
+	public static void main(String[] args) 
+	{
+		
+	}
+}
+class shape
+{
+	double Area(float x)
+	{
+		System.out.println("Area of square:");
+	}
+}

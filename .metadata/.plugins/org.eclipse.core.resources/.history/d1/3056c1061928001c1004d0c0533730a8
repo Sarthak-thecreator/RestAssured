@@ -1,0 +1,20 @@
+package day2;
+
+import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.*;
+public class GitHub {
+  @Test
+  public void gettingAllRepositories() 
+  {
+	  given()
+	  	.auth()
+	  	.oauth2("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")
+	  .when()
+	  		.get("https://api.github.com/orgs/ORG/repos")
+	  .then()
+	  		.log()
+	  		.body()
+	  		.statusCode(200);
+  }
+}

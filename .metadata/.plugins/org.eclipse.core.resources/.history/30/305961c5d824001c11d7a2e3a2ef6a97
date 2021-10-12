@@ -1,0 +1,11 @@
+package com.google;
+
+import org.junit.Assert.assertEquals;
+public class JUnitTest 
+{
+	public void test1()
+	{
+		String str1="Hi";
+		assertEquals("String ");
+	}
+}

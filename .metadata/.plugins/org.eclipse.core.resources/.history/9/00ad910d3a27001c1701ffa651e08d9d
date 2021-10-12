@@ -1,0 +1,6 @@
+Feature: Addition
+
+Scenario: Addition of Two Number
+Given I have two variables "10" & "19"
+When I do addition 
+Then result should display in Console

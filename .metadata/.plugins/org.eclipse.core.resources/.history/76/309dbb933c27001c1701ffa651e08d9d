@@ -1,0 +1,24 @@
+package StepDefinition;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class AdditionSteps {
+	int a,b,c;
+	@Given("I have two variables {string} & {string}")
+	public void i_have_two_variables(String num1, String num2) {
+	   a = Integer.parseInt(num1);
+	   b = Integer.parseInt(num2);
+	}
+	@When("I do addition")
+	public void i_do_addition() {
+	   c=a+b;
+	}
+	@Then("result should display in Console")
+	public void result_should_display_in_console() {
+	  System.out.println("Sum is "+c);
+	}
+
+
+}

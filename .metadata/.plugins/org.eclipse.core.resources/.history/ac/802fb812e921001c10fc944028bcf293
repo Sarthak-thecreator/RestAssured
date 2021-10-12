@@ -1,0 +1,23 @@
+package com.lti.classwork;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+public class DownloadFile
+{
+	public static void main(String[] args) throws InterruptedException 
+	{
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://files.fm");
+		driver.manage().window().maximize();
+
+
+
+		WebElement w1 = driver.findElement(By.xpath("//*[@id=\"uploadifive-file_upload\"]/input[2]"));
+}

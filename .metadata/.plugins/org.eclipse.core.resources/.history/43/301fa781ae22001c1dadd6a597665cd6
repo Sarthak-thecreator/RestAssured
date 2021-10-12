@@ -1,0 +1,79 @@
+package com.window;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class WindowHandling {
+
+	WebDriver driver = null;
+
+	public void readproperty() throws Exception {
+
+		FileInputStream fis = new FileInputStream("Resources\\config.properties");
+		Properties prop = new Properties();
+		prop.load(fis);
+
+		String browser1 = prop.getProperty("browser");
+		fis.close();
+
+		String URL1 = prop.getProperty("URL1");
+
+		setup(browser1, URL1);
+
+	}
+
+	public void setup(String browser1, String URL1) throws Exception {
+
+		switch (browser1) {
+		case "firefox":
+
+			System.setProperty("webdriver.gecko.driver", "Resources\\geckodriver.exe");
+			driver = new FirefoxDriver();
+			break;
+
+		case "chrome":
+			System.setProperty("webdriver.chrome.driver", "Resources\\chromedriver.exe");
+			driver = new ChromeDriver();
+			break;
+
+		case "edge":
+			System.setProperty("webdriver.edge.driver", "Resources\\edgedriver.exe");
+			driver = new EdgeDriver();
+			break;
+		}
+
+		driver.get(URL1);
+		titletest();
+	}
+
+	public void titletest() throws InterruptedException {
+		
+		  //WebDriverWait wait = new WebDriverWait(driver, 0);
+		  driver.findElement(By.xpath("/html/body/div[2]/div/div/button")).click();	
+		  driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[2]/form/div/div/input")).sendKeys("Mobile");
+		  driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[2]/form/div/button")).sendKeys(Keys.ENTER);
+		  //Thread.sleep(1000);
+		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		  driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[1]/div[2]/div[2]/div/div/div/a/div[1]/div[1]/div/div")).click();
+
+	}
+
+	public void teardown() {
+		driver.close();
+
+	}
+
+	public static void main(String[] args) throws Exception {
+
+		WindowHandling gsp = new WindowHandling();
+		gsp.readproperty();
+	}
+}

@@ -1,0 +1,18 @@
+package com.google;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class GoogleSearchPage 
+{
+
+	public static void main(String[] args)
+	{
+		WebDriver driver;
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\personal\\workspace\\LTITesting\\Resources\\geckodriver.exe");
+		driver=new FirefoxDriver();
+		driver.get("https://www.google.com/");
+		System.out.println(driver.getTitle());
+		driver.close();
+	}
+
+}

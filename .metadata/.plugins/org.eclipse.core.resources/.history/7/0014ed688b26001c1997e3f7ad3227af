@@ -1,0 +1,67 @@
+package day8;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class KeyWords
+{
+	WebDriver driver;
+	public KeyWords(WebDriver driver) 
+	{
+		this.driver=driver;
+	}
+	public void getUrl(String url)
+	{
+		driver.get(url);
+	}
+	public void click(String locatorType, String locatorValue,String data)
+	{
+		if(locatorType.equals("id"))
+		{
+			driver.findElement(By.id(locatorValue)).click();
+		}
+		else if(locatorType.equals("name"))
+		{
+			driver.findElement(By.name(locatorValue)).click();
+		}
+		else if(locatorType.equals("css"))
+		{
+			driver.findElement(By.cssSelector(locatorValue)).click();
+		}
+		else if(locatorType.equals("link"))
+		{
+			driver.findElement(By.linkText(locatorValue)).click();
+		}
+		else
+			System.out.println("Invalid Locator");
+		
+	}
+	public void Type(String locatorType, String locatorValue, String data)
+	{
+		if(locatorType.equals("id"))
+			driver.findElement(By.id(locatorValue)).sendKeys(data);
+		else if(locatorType.equals("name"))
+		{
+			driver.findElement(By.name(locatorValue)).sendKeys(data);
+		}
+		else if(locatorType.equals("css"))
+		{
+			driver.findElement(By.cssSelector(locatorValue)).sendKeys(data);
+		}
+		else if(locatorType.equals("link"))
+		{
+			driver.findElement(By.linkText(locatorValue)).sendKeys(data);
+		}
+		else 
+			System.out.println("Invalid Locator");
+		
+	}
+	public void getSnap()
+	{
+		
+	}
+	public void SelectFromDropDown()
+	{
+		
+	}
+}

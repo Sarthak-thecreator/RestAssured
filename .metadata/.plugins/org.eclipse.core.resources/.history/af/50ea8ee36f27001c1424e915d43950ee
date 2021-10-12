@@ -1,0 +1,9 @@
+package RestAssured;
+
+import org.testng.annotations.Test;
+
+public class Rest1 {
+  @Test
+  public void f() {
+  }
+}

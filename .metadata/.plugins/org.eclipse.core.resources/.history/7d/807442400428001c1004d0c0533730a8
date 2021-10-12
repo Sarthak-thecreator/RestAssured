@@ -1,0 +1,9 @@
+package day2;
+
+import org.testng.annotations.Test;
+
+public class NegativeContactListTest {
+  @Test
+  public void f() {
+  }
+}

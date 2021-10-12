@@ -1,0 +1,26 @@
+package com.lti.weekendassignments;
+import java.util.Scanner;
+import java.util.Random;
+public class primecheck 
+{
+	public static void main(String[] args) 
+	{
+		Random r=new Random();
+		int minRange = 1000, maxRange= 5000,count;
+		boolean flag = false;
+        int value = rand.nextInt(maxRange - minRange) + minRange;
+        System.out.println(value);
+        for (int i = 2; i <= value / 2; ++i) {
+          // condition for nonprime number
+          if (value % i == 0) {
+            flag = true;
+            break;
+          }
+        }
+
+        if (!flag)
+          System.out.println(value + " is a prime number.");
+        else
+          System.out.println(value + " is not a prime number.");
+	}
+}

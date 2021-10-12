@@ -1,0 +1,14 @@
+package com.google;
+
+import org.junit.Assert;
+import org.junit.Assert.*;
+import org.junit.Test;
+public class JUnitTest 
+{
+	@Test
+	public void test1()
+	{
+		String str1="Hi";
+		Assert.assertEquals("Hi", str1);
+	}
+}

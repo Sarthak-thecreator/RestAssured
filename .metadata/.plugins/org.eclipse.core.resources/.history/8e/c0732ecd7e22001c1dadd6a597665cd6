@@ -1,0 +1,25 @@
+package com.lti.exceptionhandson;
+
+mport java.io.IOException;
+import java.util.Scanner;
+
+public class MaritalStatus 
+{
+
+	public static void main(String[] args) throws IOException,NoSuchFieldException,Exception
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter a letter:");
+		char a=s.nextline3();
+		switch(a)
+		{
+		case (a=='s'):
+			System.out.println();
+		}
+		else
+		{
+			System.out.println("You are eligible to vote");
+		}
+	}
+
+}
